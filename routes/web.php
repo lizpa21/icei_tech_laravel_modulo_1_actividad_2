@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CatequistaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +18,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('catequistas', CatequistaController::class);
+
+Route::get('/catequistas', [CatequistaController::class, 'index']);
+
+Route::get('/catequistas/create', [CatequistaController::class, 'create']);
+Route::get('/catequistas/show/{id}', [CatequistaController::class, 'show']);
+Route::get('/catequistas/edit/{id}', [CatequistaController::class, 'edit']);
+Route::post('/catequistas/store', [CatequistaController::class, 'store']);
+Route::put('/catequistas/store/{id}', [CatequistaController::class, 'update']);
+Route::get('/catequistas/eliminar/{id}', [CatequistaController::class, 'destroy']);
+
+//Route::resource('catequistas', CatequistaController::class);

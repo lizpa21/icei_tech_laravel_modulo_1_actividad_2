@@ -15,7 +15,8 @@
             <div class="col-md-12">
                 <div class="card border-0 shadow rounded">
                     <div class="card-body">
-                        <a href="{{ route('catequistas.create') }}" class="btn btn-md btn-success mb-3">AÑADIR CATEQUISTA</a>
+                        <a href="catequistas/create" class="btn btn-md btn-success mb-3">AÑADIR CATEQUISTA</a>
+                        
                         <table class="table table-bordered">
                             <thead>
                               <tr>
@@ -36,9 +37,9 @@
                                     <td>{{ $catequista->parroquia }}</td>
                                     <td>{{ $catequista->grupo }}</td>
                                     <td class="text-center">
-                                        <form onsubmit="return confirm('¿Está seguro?');" action="{{ route('catequistas.destroy', $catequista->id) }}" method="POST">
-                                            <a href="{{ route('catequistas.show', $catequista->id) }}" class="btn btn-sm btn-info">MOSTRAR</a>
-                                            <a href="{{ route('catequistas.edit', $catequista->id) }}" class="btn btn-sm btn-primary">EDITAR</a>
+                                        <form onsubmit="return confirm('¿Está seguro?');" action="/catequistas/eliminar/{{$catequista->id}}" method="DELETE">
+                                            <a href="/catequistas/show/{{$catequista->id}}" class="btn btn-sm btn-info">MOSTRAR</a>
+                                            <a href="/catequistas/edit/{{$catequista->id}}" class="btn btn-sm btn-primary">EDITAR</a>
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-sm btn-danger">ELIMINAR</button>
@@ -52,7 +53,7 @@
                               @endforelse
                             </tbody>
                           </table>  
-                          {{ $catequistas->links() }}
+                         
                     </div>
                 </div>
             </div>

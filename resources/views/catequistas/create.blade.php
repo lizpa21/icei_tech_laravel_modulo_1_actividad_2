@@ -15,9 +15,9 @@
                 <div class="card border-0 shadow rounded">
                     <div class="card-body">
 
-                        <a href="{{ route('catequistas.index') }}" class="btn btn-md btn-success mb-3">REGRESAR</a>
+                        <a href="/catequistas" class="btn btn-md btn-success mb-3">REGRESAR</a>
 
-                        <form action="{{ route('catequistas.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="/catequistas/store" method="POST" enctype="multipart/form-data">
                         
                             @csrf
 

@@ -16,7 +16,7 @@
                 <div class="card border-0 shadow rounded">
                     <div class="card-body">
 
-                    <a href="{{ route('catequistas.index') }}" class="btn btn-md btn-success mb-3">REGRESAR</a>
+                    <a href="/catequistas" class="btn btn-md btn-success mb-3">REGRESAR</a>
 
                         <table class="table table-bordered">
                             <thead>
